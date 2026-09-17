@@ -12,21 +12,24 @@ De 12 a 17 anos (menor que 18): "Adolescente"
 #include <stdio.h>
 
 int main() {
-    int num1 = 0; 
- 
- printf( "Entre com sua nota e eu lhe direi\n" );
- printf( "se você foi aprovado ou não: \n" );
- 
- scanf( "%d", &num1 );
- 
- if (num1 > 100){
-    printf("Digite uma nota válida \n");
- } else if (num1 < 0){
-     printf("Digite uma nota válida \n");
- } else if (num1 < 60){
-     printf("Reprovado \n");
- } else{
-     printf("Aprovado \n");
- }
+    int idade = 0;
+    char continuar; 
+    do {
+        printf("Entre com sua idade e eu lhe direi\n");
+        printf("sua classificação etária: ");
+        
+        scanf("%d", &idade);
+        
+        if (idade < 12){
+            printf("Criança\n");
+        } else if (idade >= 12 && idade < 18){
+            printf("Adolescente\n");
+        } else {
+            printf("Adulto");
+        }
+        printf("\nDigitou a idade errada? (S/N): ");
+        scanf(" %c", &continuar);
+    } while (continuar == 'S' || continuar == 's');
+    printf("\nPrograma encerrado.\n");
     return 0;
 }

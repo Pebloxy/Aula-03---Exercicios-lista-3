@@ -7,8 +7,6 @@ Imprima "Mês válido" ou "Mês inválido".
 
 #include <stdio.h>
 
-#include <stdio.h>
-
 int main() {
     int mes = 0;
     do {
@@ -20,7 +18,7 @@ int main() {
         } else {
             printf("Mês inválido! Digíte novamente.\n\n");
         }
-    } while (mes < 1 || mes > 12);
-    printf("\nPrograma encerrado. Até logo!\n");
+    } while (continuar == 'S' || continuar == 's');
+    printf("\nPrograma encerrado. Boa votação!\n");
     return 0;
 }
