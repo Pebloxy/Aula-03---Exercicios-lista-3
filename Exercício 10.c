@@ -7,18 +7,20 @@ Se for, imprima "Pode ser ano bissexto". Se não for, imprima "Não é ano bisse
 #include <stdio.h>
 
 int main() {
-    int num1 = 0; 
- 
- printf( "Entre com um inteiro e eu lhe direi\n" );
- printf( "se ele está dentro do intervalo de 10 e 20: " );
- 
- scanf( "%d", &num1 );
-
- if (num1 >= 10 && num1 <= 20){
-     printf("Valor aceito \n");
- } else{
-     printf("Valor inválido \n");
- }
-
- return 0;
+    int ano = 0;
+    char continuar;
+    do {
+        printf("Digite um ano: ");
+        scanf("%d", &ano);
+        if (ano % 4 == 0) {
+            printf("Pode ser ano bissexto\n");
+        } else {
+            printf("Não é ano bissexto\n");
+        }
+        printf("\nDeseja testar outro ano? (S/N): ");
+        scanf(" %c", &continuar);
+        printf("\n");
+    } while (continuar == 'S' || continuar == 's');
+    printf("Programa encerrado!\n");
+    return 0;
 }
