@@ -7,28 +7,20 @@ Imprima "Mês válido" ou "Mês inválido".
 
 #include <stdio.h>
 
+#include <stdio.h>
+
 int main() {
-    int num1 = 0; 
-    int num2 = 0;
-    int num3 = 0;
- 
- printf( "Entre com três inteiros e eu lhe direi\n" );
- printf( "qual o maior: " );
- 
- scanf( "%d%d%d", &num1, &num2, &num3);
- 
- if (num1 > num2){
-     if (num1 > num3){
-     printf("O maior numero é o %d\n", num1);
-     } else {
-     printf("O maior numero é o %d\n", num3);
-     }
- } else {
-    if (num2 > num3){
-     printf("O maior numero é o %d\n", num2);
-     } else {
-     printf("O maior numero é o %d\n", num3);
-     }
- }
+    int mes = 0;
+    do {
+        printf("Digite o número do mês (1 a 12): ");
+        scanf("%d", &mes);
+
+        if (mes >= 1 && mes <= 12) {
+            printf("Mês válido!\n");
+        } else {
+            printf("Mês inválido! Digíte novamente.\n\n");
+        }
+    } while (mes < 1 || mes > 12);
+    printf("\nPrograma encerrado. Até logo!\n");
     return 0;
 }
